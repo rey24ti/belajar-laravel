@@ -1,0 +1,12 @@
+.gambar{
+    height: 40px;
+    width: auto;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/MyCustomFont.ttf');
+}
+
+.font-custom{
+    font-family: 'MyCustomFont';
+}
