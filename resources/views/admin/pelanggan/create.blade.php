@@ -1,5 +1,5 @@
 @extends('admin.template')
-@section('title','Tambah Pelanggan')
+@section('title', 'Tambah Pelanggan')
 @section('content')
         <div class="py-4">
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -21,7 +21,7 @@
                     <p class="mb-0">Form untuk menambahkan data pelanggan baru.</p>
                 </div>
                 <div>
-                    <a href="#" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                    <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
-                        <form action={{ route('pelanggan.store') }} method="POST">
+                        <form action="{{ route('pelanggan.store') }}" method="POST">
                             @csrf
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
@@ -92,4 +92,4 @@
                 </div>
             </div>
         </div>
-@endsection
+@endsection()

@@ -1,12 +1,14 @@
-.gambar{
+.navbar-logo {
     height: 40px;
     width: auto;
 }
+
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('../fonts/MyCustomFont.ttf');
+    src: url('/assets/fonts/PlaywriteDESAS-VariableFont_wght.ttf');
 }
 
 .font-custom{
     font-family: 'MyCustomFont';
 }
+

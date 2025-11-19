@@ -1,5 +1,5 @@
 @extends('admin.template')
-@section('title','Tambah user')
+@section('title', 'Tambah User')
 @section('content')
         <div class="py-4">
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -11,17 +11,17 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">user</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah user</li>
+                    <li class="breadcrumb-item"><a href="#">User</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah user</h1>
+                    <h1 class="h4">Tambah User</h1>
                     <p class="mb-0">Form untuk menambahkan data user baru.</p>
                 </div>
                 <div>
-                    <a href="#" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                    <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
                 </div>
             </div>
         </div>
@@ -30,35 +30,49 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
-                        <form action={{ route('user.store') }} method="POST">
+                        @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+
+                        <form action="{{ route('user.store') }}" method="POST">
                             @csrf
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
                                     <!-- Name -->
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Nama</label>
-                                        <input type="text" id="name" name="name" class="form-control" required>
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" required>
                                     </div>
 
                                     <!-- Email -->
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="text" id="email" name="email" class="form-control" required>
+                                        <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}" required>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-4 col-sm-6">
                                     <!-- Password -->
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
-                                        <input type="password" id="password" name="password" class="form-control">
+                                        <input type="password" id="password" name="password" class="form-control" required>
                                     </div>
 
                                     <!-- Confirm Password -->
                                     <div class="mb-3">
                                         <label for="password_confirmation" class="form-label">Confirm Password</label>
-                                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
+                                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required>
+                                    </div>
                                 </div>
+
                                     <!-- Buttons -->
                                     <div class="">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -72,4 +86,4 @@
                 </div>
             </div>
         </div>
-@endsection
+@endsection()
