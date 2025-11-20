@@ -1,4 +1,3 @@
-AGUSTIAN HARTONO PUTRA SIBARANI, Now
 @extends('admin.layouts.app')
 @section('title', 'List Pelanggan')
 @section('content')
@@ -70,10 +69,6 @@ AGUSTIAN HARTONO PUTRA SIBARANI, Now
 
     </div>
 </div>
-
-			<table>...</table>
-
-      ...
   </div>
                     <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
                         <thead class="thead-light">
