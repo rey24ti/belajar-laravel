@@ -14,12 +14,12 @@ public function index(Request $request){
 {
     // Daftar kolom yang bisa difilter sesuai nama pada form
     $filterableColumns = ['gender'];
+    $searchableColumns = ['first_name'];
 
     // Gunakan scope filter untuk memproses query
     $pageData['dataPelanggan'] = Pelanggan::filter($request, $filterableColumns)
-    ->paginate(10)
-    ->withQueryString()
-    ;
+                                ->search($request,$searchableColumns)
+                                ->paginate(10)->withQueryString();
 
     //$data['dataPelanggan'] = Pelanggan::simplePaginate(10)->onEachSide(2) ;
 
