@@ -22,7 +22,8 @@
                     <p class="mb-0">List data seluruh user</p>
                 </div>
                 <div>
-                    <a href="" class="btn btn-success text-white"><i class="far fa-question-circle me-1"></i> Tambah User</a>
+                    <a href="{{ route('user.create') }}" class="btn btn-success text-white"><i
+                    class="far fa-question-circle me-1"></i> Tambah user</a>
                 </div>
             </div>
         </div>
@@ -35,6 +36,7 @@
                             <table id="table-user" class="table table-centered table-nowrap mb-0 rounded">
                                 <thead class="thead-light">
                                     <tr>
+                                        <th class="border-0">Profile Picture</th>
                                         <th class="border-0">Name</th>
                                         <th class="border-0">Email</th>
                                         <th class="border-0">Password</th>
@@ -44,6 +46,7 @@
                                 <tbody>
                                     @foreach($dataUser as $item)
                                         <tr>
+                                            <td><img src="{{ Storage::url($item->profile_picture) }}" alt=" Picture" width="200"></td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->password }}</td>

@@ -59,3 +59,6 @@ Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])->name('pel
 Route::resource('user', UserController::class);
 Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
+
+Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
+Route::post('/save','MultipleuploadsController@store')->name('uploads.store');  
